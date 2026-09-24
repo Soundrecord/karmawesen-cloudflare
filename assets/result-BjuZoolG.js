@@ -1,0 +1,1 @@
+function e(e){return{ok:!0,value:e}}function t(e){return{ok:!1,error:e}}var n=class extends Error{code;details;constructor(e,t,n){super(e),this.code=t,this.details=n,this.name=`AppError`}};export{t as n,e as r,n as t};

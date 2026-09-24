@@ -1,0 +1,1 @@
+var e=1500;function t(t,n=e){return t<=0?[]:Array.from({length:t},(e,t)=>t===0?0:t*n)}export{t as n,e as t};

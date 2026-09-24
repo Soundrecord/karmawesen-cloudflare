@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>紧急存点</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.5;
+      }
+      .ok {
+        color: #0a7;
+      }
+      .warn {
+        color: #a60;
+      }
+      .err {
+        color: #c00;
+      }
+      code {
+        background: #f4f4f4;
+        padding: 0.1em 0.35em;
+        border-radius: 0.25rem;
+      }
+      button {
+        margin-top: 0.75rem;
+        padding: 0.45rem 0.85rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>紧急存点</h1>
+    <p>
+      <strong>重要：</strong>请用<strong>新开标签页</strong>打开本页。打开前在原页多按几次 <kbd>Tab</kbd> 让输入失焦。
+    </p>
+    <p id="status">正在读取 IndexedDB…</p>
+    <button id="retry-download" type="button" hidden>再次下载 JSON</button>
+    <pre id="log"></pre>
+    <script>
+      const SESSION_KEY = "session:current";
+      const DEV_KEY = "dev:checkpoint:v1";
+      const EMERGENCY_IDB_KEY = "dev:checkpoint:emergency-latest";
+
+      let lastJson = "";
+      let lastName = "";
+
+      function log(msg) {
+        document.getElementById("log").textContent += msg + "\n";
+      }
+
+      function parseVal(field, raw) {
+        if (field === "legacy11") return raw === "" ? null : raw === "true";
+        if (
+          [
+            "ratingPlus",
+            "audioOverride",
+            "plusFingers",
+            "jacketOverride",
+            "hiddenUntilUnlocked",
+            "worldUnlock",
+          ].includes(field)
+        ) {
+          return raw === "true";
+        }
+        return raw;
+      }
+
+      function mergeDom(session) {
+        const editor = window.opener
+          ? window.opener.document.getElementById("songlist-difficulties-editor")
+          : null;
+        if (editor && session.songlist && session.songlist.writing) {
+          const de = session.songlist.writing.difficultiesEdit || {
+            classes: [],
+            ratingUnified: true,
+            ratingPlusUnified: true,
+            ratingClassAlias: 0,
+            difficultiesWaiveOmit: [],
+            bpmMismatchGroups: null,
+          };
+          const byRc = new Map(de.classes.map((c) => [c.ratingClass, { ...c }]));
+          editor.querySelectorAll("[data-sl-df-field][data-sl-df-rc]").forEach((el) => {
+            const field = el.getAttribute("data-sl-df-field");
+            const rc = Number(el.getAttribute("data-sl-df-rc"));
+            if (!field || Number.isNaN(rc)) return;
+            if (!byRc.has(rc)) {
+              byRc.set(rc, {
+                ratingClass: rc,
+                titleEn: "",
+                chartDesigner: "",
+                bpm: "",
+                bpmBase: "",
+                rating: "",
+                ratingPlus: false,
+                audioOverride: false,
+                hiddenUntil: "none",
+                legacy11: null,
+                legacy11Touched: false,
+                titleJa: "",
+                titleKo: "",
+                titleZhHant: "",
+                titleZhHans: "",
+                plusFingers: false,
+                jacketOverride: false,
+                hiddenUntilUnlocked: false,
+                worldUnlock: false,
+                date: "",
+              });
+            }
+            byRc.get(rc)[field] = parseVal(field, el.value);
+          });
+          de.classes = [...byRc.values()].sort((a, b) => a.ratingClass - b.ratingClass);
+          const aliasEl = window.opener
+            ? window.opener.document.getElementById("songlist-diff-alias")
+            : null;
+          if (aliasEl) de.ratingClassAlias = aliasEl.value === "1" ? 1 : 0;
+          session.songlist.writing.difficultiesEdit = de;
+          log("已从原标签页 difficulties 编辑器合并 DOM 输入。");
+        }
+
+        const lq = window.opener
+          ? window.opener.document.getElementById("songlist-lookup-query")
+          : null;
+        if (lq && lq.value && session.songlist && session.songlist.writing) {
+          session.songlist.writing.lookupQuery = lq.value;
+        }
+
+        const base = window.opener
+          ? window.opener.document.getElementById("songlist-base-text")
+          : null;
+        if (base && base.value && session.songlist) session.songlist.baseText = base.value;
+      }
+
+      function idbOpen(mode) {
+        return new Promise((resolve, reject) => {
+          const req = indexedDB.open("karmawesen-kv", 1);
+          req.onerror = () => reject(req.error || new Error("indexedDB.open failed"));
+          req.onsuccess = () => resolve(req.result);
+        });
+      }
+
+      function idbGet(key) {
+        return idbOpen().then(
+          (db) =>
+            new Promise((resolve, reject) => {
+              const tx = db.transaction("kv", "readonly");
+              const get = tx.objectStore("kv").get(key);
+              get.onerror = () => reject(get.error);
+              get.onsuccess = () => resolve(get.result);
+            }),
+        );
+      }
+
+      function idbSet(key, raw) {
+        return idbOpen().then(
+          (db) =>
+            new Promise((resolve, reject) => {
+              const tx = db.transaction("kv", "readwrite");
+              tx.objectStore("kv").put(raw, key);
+              tx.oncomplete = () => resolve();
+              tx.onerror = () => reject(tx.error);
+            }),
+        );
+      }
+
+      function downloadJson(json, session) {
+        const name = "checkpoint-emergency-" + (session.step || "unknown") + "-" + Date.now() + ".json";
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(new Blob([json], { type: "application/json" }));
+        a.download = name;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        return name;
+      }
+
+      function tryLocalStorage(key, value) {
+        try {
+          localStorage.setItem(key, value);
+          return true;
+        } catch (e) {
+          log("localStorage 跳过 " + key + "：" + e);
+          return false;
+        }
+      }
+
+      function slimForLocalStorage(session) {
+        return JSON.stringify({
+          step: session.step,
+          delivery: session.delivery,
+          outputs: session.outputs,
+          songlist: session.songlist,
+          songFolder: session.songFolder
+            ? {
+                folders: session.songFolder.folders,
+                pool: session.songFolder.pool?.map((f) => ({
+                  id: f.id,
+                  name: f.name,
+                  kind: f.kind,
+                  blobId: f.blobId,
+                })),
+              }
+            : undefined,
+          _emergencySlim: true,
+          _savedAt: Date.now(),
+        });
+      }
+
+      async function runSave() {
+        const status = document.getElementById("status");
+        const retryBtn = document.getElementById("retry-download");
+        try {
+          const raw = await idbGet(SESSION_KEY);
+          const session = raw ? JSON.parse(raw) : {};
+          mergeDom(session);
+
+          lastJson = JSON.stringify(session, null, 2);
+          const mb = (lastJson.length / 1024 / 1024).toFixed(2);
+          log("会话 JSON 约 " + mb + " MB");
+
+          lastName = downloadJson(lastJson, session);
+          log("已触发下载：" + lastName);
+          retryBtn.hidden = false;
+
+          const idbOk = await idbSet(EMERGENCY_IDB_KEY, lastJson).then(
+            () => true,
+            (e) => {
+              log("IndexedDB 备份失败：" + e);
+              return false;
+            },
+          );
+          if (idbOk) log("已写入 IndexedDB 键 " + EMERGENCY_IDB_KEY);
+
+          const lsFull = tryLocalStorage(DEV_KEY, lastJson);
+          const lsSlim = lsFull ? true : tryLocalStorage(DEV_KEY, slimForLocalStorage(session));
+
+          const warnings = [];
+          if (!lsFull && !lsSlim) warnings.push("localStorage 已满（正常，大会话会这样）");
+          if (!idbOk) warnings.push("IndexedDB 备份未成功");
+
+          if (warnings.length) {
+            status.innerHTML =
+              '<span class="ok">存点成功：已下载 <code>' +
+              lastName +
+              '</code>。</span> <span class="warn">' +
+              warnings.join("；") +
+              "。请以<strong>下载的 JSON 文件</strong>为准。</span>";
+          } else {
+            status.innerHTML =
+              '<span class="ok">存点成功：已下载 <code>' +
+              lastName +
+              "</code>，并写入 IndexedDB / localStorage。</span>";
+          }
+
+          log("恢复：探针「导入存点」选该 JSON；或地址 ?checkpoint=emergency（若已支持）。");
+        } catch (e) {
+          status.innerHTML = '<span class="err">存点失败：' + String(e) + "</span>";
+        }
+      }
+
+      document.getElementById("retry-download").addEventListener("click", () => {
+        if (!lastJson) return;
+        const session = JSON.parse(lastJson);
+        lastName = downloadJson(lastJson, session);
+        log("再次下载：" + lastName);
+      });
+
+      runSave();
+    </script>
+  </body>
+</html>

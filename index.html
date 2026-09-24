@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>karmawesen（占位）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="module" crossorigin src="/assets/index-QRV0mq7Y.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="/assets/result-BjuZoolG.js">
+    <link rel="modulepreload" crossorigin href="/assets/strings-CCx6lVWW.js">
+    <link rel="modulepreload" crossorigin href="/assets/export-formats-Bhbkh8sf.js">
+    <link rel="modulepreload" crossorigin href="/assets/folder-DyLgQQaP.js">
+    <link rel="modulepreload" crossorigin href="/assets/file-blobs-DrDvaJFr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-Czpn1I53.js">
+    <link rel="modulepreload" crossorigin href="/assets/extract-filter-5pf385Kz.js">
+    <link rel="modulepreload" crossorigin href="/assets/browse-_sO4rqI7.js">
+    <link rel="modulepreload" crossorigin href="/assets/types-BtHWdjdX.js">
+    <link rel="modulepreload" crossorigin href="/assets/wav-CJfQshjD.js">
+    <link rel="modulepreload" crossorigin href="/assets/decode-any-B49ETKDn.js">
+    <link rel="modulepreload" crossorigin href="/assets/session-blobs-DnTfrKd6.js">
+    <link rel="modulepreload" crossorigin href="/assets/aff-ogg-hub-tasks-CsC2ZaJT.js">
+    <link rel="modulepreload" crossorigin href="/assets/bulk-job-CkKsdQdQ.js">
+    <link rel="modulepreload" crossorigin href="/assets/ingest-busy-DMdxxmv4.js">
+    <link rel="modulepreload" crossorigin href="/assets/pack-persist-tracker-Dmjp-Vn-.js">
+    <link rel="modulepreload" crossorigin href="/assets/extract-only-eI-89ubF.js">
+    <link rel="modulepreload" crossorigin href="/assets/aff-archive-import-DSittmpw.js">
+    <link rel="modulepreload" crossorigin href="/assets/apk-enter-image-prep-_DrrOFoK.js">
+    <link rel="modulepreload" crossorigin href="/assets/aff-ogg-follower-B-jTCSOC.js">
+    <link rel="modulepreload" crossorigin href="/assets/stagger-download-BGBx6LEb.js">
+    <link rel="modulepreload" crossorigin href="/assets/ffmpeg-wav-to-ogg-PCHAk9Wk.js">
+    <link rel="modulepreload" crossorigin href="/assets/aff-ogg-speed-process-report-C3c8SLkR.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-ijw4eFgA.css">
+  </head>
+  <body class="is-delivery">
+    <div id="app">
+      <p id="notice" class="notice issues" hidden></p>
+      <section id="guide" class="guide">点 A、B 或 C 其中一个。A 是打包成 APK，B 是其他交付形式。没有已存默认时 C 点不了。（占位）</section>
+      <p id="file-zone-ops" class="guide file-zone-ops" hidden>显示文件的区域可以这样操作。短按：选中；再短按同一个：取消选中。可以同时选多个。连点两下（双击）是复制当前已选中的全部文件，不会取消选中。连点三下是删除当前已选中的全部文件。向右滑：扫到的批量选中。向左滑：扫到的批量取消。点 × 只删这一个。点「清空全部」清掉这一区。长按几乎不移动再松手：改文件名和扩展名。点本区空白：粘贴。按住拖到另一区：复制过去。音频右边的播放键可以试听。（占位）</p>
+
+      <section class="page-step is-on page-delivery" data-step="delivery">
+        <header class="bare-head">
+          <h1>选择最终交付形态（占位）</h1>
+          <p class="bare">点 A、B 或 C 其中一个。A 是打包成 APK，B 是其他交付形式。没有已存默认时 C 点不了。（占位）</p>
+        </header>
+        <div class="choice-group" role="group" aria-label="交付形态（占位）">
+          <button type="button" data-choose="A">
+            <span class="choice-mark">A</span>
+            <span class="choice-label">打包成 APK（占位）</span>
+            <span class="choice-note">处理结果打进 APK，下载后可安装游玩（占位）</span>
+          </button>
+          <button type="button" data-choose="B">
+            <span class="choice-mark">B</span>
+            <span class="choice-label">其他交付形式（占位）</span>
+            <span class="choice-note">以零散文件、文件夹、或多个文件夹组成的压缩包等形式交付（占位）</span>
+          </button>
+          <button type="button" data-choose="C" disabled>
+            <span class="choice-mark">C</span>
+            <span class="choice-label">使用默认选项（占位）</span>
+            <span class="choice-note">按已保存的默认配置进入后续；尚未保存时不可选（占位）</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="page-step screen" data-step="outputs" hidden>
+        <h1 id="outputs-title">你最终想要得到以下哪些文件或文件夹？（占位）</h1>
+        <p id="outputs-hint" class="muted" hidden></p>
+        <div class="cards">
+          <button type="button" data-output="aff" data-selected="false">aff 文件（占位）</button>
+          <button type="button" data-output="ogg" data-selected="false">ogg 文件（占位）</button>
+          <button type="button" data-output="songFolder" data-selected="false">曲目文件夹（占位）</button>
+          <button type="button" data-output="songlist" data-selected="false">songlist 文件（占位）</button>
+        </div>
+        <label class="muted"><input type="checkbox" id="save-default" /> 是否保存为默认选项（占位）</label>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="pairing" data-drop hidden>
+        <h1>aff 与 ogg 总控台（占位）</h1>
+        <p class="muted">先在上传区加入文件，可配对。自动提取的会进任务列表。任务分三块：配对、单独 aff、单独 ogg。点「仅 aff」「仅 ogg」或「aff+ogg」进入对应流程。（占位）</p>
+        <p class="muted">点左边谱面、再点右边音频，两点之间会出现连线。在线上划一下可以切断。文件夹同目录自动配，禁止多对多。自动提取的直接进入任务列表。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <button type="button" class="secondary archive-repair-handle" data-arch-page="hub" data-arch-repair-handle="1">修复（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 与音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 与音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <p id="hub-repair-status" class="hub-repair-status muted" role="status"></p>
+        <h2>压缩包（占位）</h2>
+        <div id="hub-archives" class="list zone file-stack" data-blank="hub-arch"></div>
+        <div id="hub-archive-layer" class="archive-layer zone file-stack" data-blank="hub-arch"></div>
+        <h2 id="hub-extracted-title">自动提取的文件（占位）</h2>
+        <p class="muted" id="hub-extracted-hint">压缩包自动解开的文件只在这里显示，不和左右配对区混在一起。本区有固定高度，多了在框里上下滚。可用检索按文件夹前缀或文件名跳转。（占位）</p>
+        <div class="extract-find" id="hub-extracted-find" hidden>
+          <label class="muted">在提取区检索（占位）
+            <input type="search" class="archive-find-input" data-extract-find-input="hub" placeholder="搜文件夹前缀或文件名（占位）" autocomplete="off" />
+          </label>
+          <button type="button" class="secondary" data-extract-find-next="hub">下一个（占位）</button>
+          <button type="button" class="secondary" data-fz="hub-extracted" data-fz-op="select-all" title="把本区当前列表全部选中（占位）">☑ 全选（占位）</button>
+          <button type="button" class="secondary" data-fz="hub-extracted" data-fz-op="select-none" title="取消本区全部选中（占位）">☐ 取消全选（占位）</button>
+          <span class="muted archive-find-status" data-extract-find-status="hub"></span>
+        </div>
+        <div id="hub-extracted" class="list zone extract-scroll-zone" data-blank="hub-extracted"></div>
+        <div class="row pair-board" id="hub-pair-board">
+          <div class="pair-col">
+            <h2>aff 文件（占位）</h2>
+            <div id="hub-aff-files" class="list zone" data-blank="hub-aff"></div>
+          </div>
+          <div class="pair-col">
+            <h2>ogg 文件（占位）</h2>
+            <div id="hub-ogg-files" class="list zone" data-blank="hub-ogg"></div>
+          </div>
+          <svg class="pair-lines" aria-hidden="true"></svg>
+        </div>
+        <p id="hub-notices" class="issues"></p>
+        <div class="hub-purge-unselected-row" id="hub-purge-unselected-row">
+          <button type="button" class="hub-purge-unselected-btn" data-act="purge-unselected-hub-tasks">一键删除未选中任务（临时）（占位）</button>
+          <p class="muted hub-purge-unselected-hint">只删任务表里未勾选的行；已选中的会保留并写入会话。（占位）</p>
+        </div>
+        <h2>配对的任务（占位）</h2>
+        <div id="hub-paired" class="list zone" data-blank="hub-tasks"></div>
+        <h2>单独 aff 任务（占位）</h2>
+        <div id="hub-aff" class="list zone" data-blank="hub-tasks"></div>
+        <h2>单独 ogg 任务（占位）</h2>
+        <div id="hub-ogg" class="list zone" data-blank="hub-tasks"></div>
+        <div class="row">
+          <button type="button" class="secondary" data-hub-enter="aff">仅 aff（占位）</button>
+          <button type="button" class="secondary" data-hub-enter="ogg">仅 ogg（占位）</button>
+          <button type="button" class="secondary" data-hub-enter="paired">aff+ogg（占位）</button>
+        </div>
+        <h2>已完成的任务（占位）</h2>
+        <div id="hub-done" class="list"><span class="muted">还没有完成的任务（占位）</span></div>
+      </section>
+
+      <section class="page-step screen" data-step="aff-mode" hidden>
+        <h1>选择 aff 处理方式（占位）</h1>
+        <p id="aff-mode-hint" class="muted">从第二页进入：本枝没有配对页（占位）</p>
+        <div class="row">
+          <button type="button" data-option="slice" data-selected="false">切片（占位）</button>
+          <button type="button" data-option="speed" data-selected="false">倍速（占位）</button>
+        </div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-slice" data-drop hidden>
+        <h1>aff 切片总控（占位）</h1>
+        <p class="muted">点「按时间切」「按 combo 切分」或「在图片上选区」进入对应操作页。操作页返回上一步会回到本页。要离开切片区域，请点「我已经切完了，进入下一步」。（占位）</p>
+        <div class="row">
+          <button type="button" class="secondary" data-aff-op="time">按时间切（占位）</button>
+          <button type="button" class="secondary" data-aff-op="combo">按 combo 切分（占位）</button>
+          <button type="button" class="secondary" data-aff-op="image">在图片上选区（占位）</button>
+        </div>
+        <h2>已经切好的文件（占位）</h2>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="aff-slice-archives" class="list zone file-stack" data-blank="aff-slice-arch"></div>
+        <div id="aff-slice-archive-layer" class="archive-layer zone file-stack" data-blank="aff-slice-arch"></div>
+        <div id="aff-slice-files" class="list zone" data-blank="aff-slice"></div>
+      </section>
+
+      <section class="page-step screen" data-step="ogg-mode" hidden>
+        <h1>选择 ogg 处理方式（占位）</h1>
+        <p class="muted">本页只选择处理方式，不能导出文件。导出在更后面的「倍速与格式转换」页。（占位）</p>
+        <div class="row">
+          <button type="button" data-option="slice-speed-format" data-selected="false">切片 + 倍速 + 格式转换（占位）</button>
+          <button type="button" data-option="speed-format" data-selected="false">仅倍速 + 格式转换（占位）</button>
+        </div>
+      </section>
+
+      <section class="page-step screen" data-step="ogg-slice" hidden>
+        <h1>选择切片方式（占位）</h1>
+        <p class="muted">本页只选切片方式，不能导出文件。（占位）</p>
+        <div class="row">
+          <button type="button" data-option="time" data-selected="false">按时间切（占位）</button>
+          <button type="button" data-option="chart" data-selected="false">按谱面切（占位）</button>
+        </div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-slice-time" data-drop hidden>
+        <h1>按时间切 aff（占位）</h1>
+        <p class="muted">每个文本是一条任务。选中一条后填写每一段的起止时间。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="aff-time-archives" class="list zone file-stack" data-blank="aff-time-arch"></div>
+        <div id="aff-time-archive-layer" class="archive-layer zone file-stack" data-blank="aff-time-arch"></div>
+        <h2>已提取的文件（占位）</h2>
+        <p class="muted">文件夹会直接抽出谱面到这里。自动超过 30 条不会进任务表；选中后拖到下方任务列表，或点压缩包里的「导入任务表」。（占位）</p>
+        <div id="aff-time-files" class="list zone" data-blank="aff-time-files"></div>
+        <p id="aff-time-notices" class="issues"></p>
+        <h2>任务列表（占位）</h2>
+        <div id="aff-time-tasks" class="list zone" data-blank="aff-time-tasks"></div>
+        <div id="aff-time-panel"></div>
+        <h2>切片结果（占位）</h2>
+        <div id="aff-time-preview" class="list zone" data-blank="aff-time-out"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-chart-combo" data-drop hidden>
+        <h1>按 combo 切 aff（占位）</h1>
+        <p class="muted">每个文本是一条任务，不靠配对。选中一条后按 combo 切点切开 aff。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="aff-combo-archives" class="list zone file-stack" data-blank="aff-combo-arch"></div>
+        <div id="aff-combo-archive-layer" class="archive-layer zone file-stack" data-blank="aff-combo-arch"></div>
+        <h2>已提取的文件（占位）</h2>
+        <p class="muted">文件夹会直接抽出谱面到这里。自动超过 30 条不会进任务表；选中后拖到下方任务列表，或点压缩包里的「导入任务表」。（占位）</p>
+        <div id="aff-combo-files" class="list zone" data-blank="aff-combo-files"></div>
+        <p id="aff-combo-notices" class="issues"></p>
+        <h2>任务列表（占位）</h2>
+        <div id="aff-combo-tasks" class="list zone" data-blank="aff-combo-tasks"></div>
+        <div id="aff-combo-panel"></div>
+        <h2>切片结果（占位）</h2>
+        <div id="aff-combo-preview" class="list zone" data-blank="aff-combo-out"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-chart-image" data-drop hidden>
+        <h1>在图片上选区切 aff（占位）</h1>
+        <p class="muted">每个文本是一条任务。只选一条后渲染谱面图，用中括号框选再完成。（占位）</p>
+        <p id="aff-image-bulk-restore-hint" class="muted" hidden></p>
+        <div class="row" id="aff-image-bulk-restore-row" hidden>
+          <button type="button" data-act="aff-image-bulk-restore-slices">一键补全全部跟随任务（占位）</button>
+        </div>
+        <p id="apk-paired-pick-hint" class="muted" hidden></p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="aff-image-archives" class="list zone file-stack" data-blank="aff-image-arch"></div>
+        <div id="aff-image-archive-layer" class="archive-layer zone file-stack" data-blank="aff-image-arch"></div>
+        <h2>已提取的文件（占位）</h2>
+        <p class="muted">文件夹会直接抽出谱面到这里。自动超过 30 条不会进任务表；选中后拖到下方任务列表，或点压缩包里的「导入任务表」。（占位）</p>
+        <div id="aff-image-files" class="list zone" data-blank="aff-image-files"></div>
+        <p id="aff-image-notices" class="issues"></p>
+        <h2>任务列表（占位）</h2>
+        <div id="aff-image-tasks" class="list zone drop-zone" data-blank="aff-image-tasks" data-drop="aff-image-tasks"></div>
+        <div class="row">
+          <button type="button" class="secondary" data-act="aff-image-render">渲染谱面图（占位）</button>
+        </div>
+        <label class="muted">起点偏移（毫秒）（占位） <input type="text" id="aff-image-offset" /></label>
+        <p class="muted">框线颜色：在色盘上点，外环是色相，中间是深浅。和绘画软件一样，所有颜色都能选。（占位）</p>
+        <div id="aff-image-wheel" class="color-wheel"></div>
+        <div class="chart-view">
+          <div class="chart-zoom-bar">
+            <button type="button" class="secondary" data-chart-zoom="aff" data-zoom-act="out">缩小（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="aff" data-zoom-act="in">放大（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="aff" data-zoom-act="reset">1×（占位）</button>
+            <span class="muted" data-zoom-readout="aff"></span>
+          </div>
+          <div id="aff-image-chart" class="chart-board"></div>
+        </div>
+        <div id="aff-image-frags" class="row"></div>
+        <div class="row">
+          <button type="button" data-act="aff-image-complete">完成切片（占位）</button>
+        </div>
+        <h2>切片结果（占位）</h2>
+        <p id="aff-image-restore-hint" class="muted"></p>
+        <div class="row">
+          <button type="button" class="secondary" data-act="aff-image-restore-slices">从参数恢复切片（占位）</button>
+        </div>
+        <div id="aff-image-preview" class="list zone file-stack" data-blank="aff-image-out"></div>
+        <h2 id="aff-image-ogg-title" class="apk-paired-only" hidden>配套音频输出（占位）</h2>
+        <div id="aff-image-ogg-preview" class="list zone file-stack apk-paired-only" data-blank="aff-image-ogg" hidden></div>
+        <div class="row aff-image-hub-carry">
+          <button type="button" class="secondary" data-act="aff-image-hub-replace" title="用切出的全部谱面替换本条跟随任务原来的那一份（多片换一片可以）（占位）">替换任务里的谱面（占位）</button>
+          <button type="button" class="secondary" data-act="aff-image-hub-append" title="保留原谱面，把切出的谱面追加为新的跟随任务（占位）">增贴到任务列表（占位）</button>
+        </div>
+        <div class="row apk-paired-footer" hidden>
+          <button type="button" data-act="skip-cut">不切，直接去倍速（占位）</button>
+        </div>
+        <h2>切好的切片预览（占位）</h2>
+        <p id="aff-image-slice-hint" class="muted"></p>
+        <div class="row">
+          <button type="button" class="secondary" data-act="aff-image-slice-preview">渲染选中切片预览（占位）</button>
+        </div>
+        <div class="chart-view">
+          <div class="chart-zoom-bar">
+            <button type="button" class="secondary" data-chart-zoom="aff-slice" data-zoom-act="out">缩小（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="aff-slice" data-zoom-act="in">放大（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="aff-slice" data-zoom-act="reset">1×（占位）</button>
+            <span class="muted" data-zoom-readout="aff-slice"></span>
+          </div>
+          <div id="aff-image-slice-chart" class="chart-board is-slice-preview"></div>
+        </div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-speed" data-drop hidden>
+        <h1>aff 倍速（占位）</h1>
+        <p id="aff-speed-hint" class="muted"></p>
+        <p class="muted">倍速默认 1.00。待处理谱面可批量加入。处理只改时间参数（毫秒取整），不改 AudioOffset 和 BPM。（占位）</p>
+        <div id="aff-speed-tray" class="zone" hidden></div>
+        <h2>待处理谱面（占位）</h2>
+        <p class="muted">可加入任意扩展名或无扩展名文件，也可加入文件夹或压缩包。点选变色，再点取消；可多选。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 文件（占位）">
+            <input type="checkbox" id="aff-extract" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="aff-speed-archives" class="list zone file-stack" data-blank="aff-speed-arch"></div>
+        <div id="aff-speed-archive-layer" class="archive-layer zone file-stack" data-blank="aff-speed-arch"></div>
+        <div id="aff-speed-pending" class="list zone" data-blank="aff-pending"></div>
+        <label class="muted">倍速（占位） <input type="text" id="aff-speed-value" /></label>
+        <div class="row">
+          <button type="button" data-act="aff-speed-process">处理选中文件（占位）</button>
+          <button type="button" class="secondary" data-act="aff-speed-export">导出选中文件（占位）</button>
+        </div>
+        <h2>处理后的文件（占位）</h2>
+        <div id="aff-speed-processed" class="list zone" data-blank="aff-processed"></div>
+      </section>
+
+      <section class="page-step screen" data-step="aff-ogg-cut" hidden>
+        <h1>aff+ogg 配套切片（占位）</h1>
+        <p class="muted">选中的配对任务文件会一直跟着你。可以按谱面切，同时得到切好的谱面和音频；也可以不切。（占位）</p>
+        <p id="aff-ogg-cut-follow" class="muted"></p>
+        <p id="apk-paired-image-lock" class="muted" hidden></p>
+        <div class="row">
+          <button type="button" class="secondary" data-cut-op="time">按时间切（占位）</button>
+          <button type="button" class="secondary" data-cut-op="combo">按 combo 切分（占位）</button>
+          <button type="button" class="secondary" data-cut-op="image">在图片上选区（占位）</button>
+          <button type="button" data-act="skip-cut">不切，直接去倍速（占位）</button>
+        </div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="aff-ogg-speed" data-drop hidden>
+        <h1>aff+ogg 配套倍速（占位）</h1>
+        <p class="muted">处理后的文件会自动写入带进下一步。也可以把未处理的文件带进下一步。（占位）</p>
+        <h2>待处理（占位）</h2>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 与音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 与音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="pair-speed-archives" class="list zone file-stack" data-blank="pair-speed-arch"></div>
+        <div id="pair-speed-archive-layer" class="archive-layer zone file-stack" data-blank="pair-speed-arch"></div>
+        <div class="row">
+          <button type="button" class="secondary" data-act="pair-speed-batch-pick">选中模式（占位）</button>
+        </div>
+        <div id="pair-speed-pending" class="list zone" data-blank="pair-pending"></div>
+        <label class="muted">倍速（占位） <input type="text" id="pair-speed-value" /></label>
+        <div class="row">
+          <button type="button" data-act="pair-speed-process">处理选中文件（占位）</button>
+          <button type="button" class="secondary" data-act="pair-carry">把选中的未处理文件带进下一步（占位）</button>
+          <button type="button" class="secondary" data-act="pair-speed-export">导出选中（占位）</button>
+        </div>
+        <h2>处理后的文件（占位）</h2>
+        <div id="pair-speed-processed" class="list zone" data-blank="pair-processed"></div>
+        <div class="row pair-speed-hub-carry">
+          <button type="button" class="secondary" data-act="pair-speed-hub-replace" title="用倍速后的 aff 与配套音频成对替换源头任务（占位）">一键替换（占位）</button>
+          <button type="button" class="secondary" data-act="pair-speed-hub-append" title="保留原任务，把倍速结果追加为新的六芒星任务（占位）">一键增加（占位）</button>
+        </div>
+        <h2>带进下一步（占位）</h2>
+        <div id="pair-speed-carry" class="list zone" data-blank="pair-carry"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="ogg-slice-time" data-drop hidden>
+        <h1>按时间切片（占位）</h1>
+        <p id="ogg-time-hint" class="muted"></p>
+        <p class="muted">单位默认毫秒，可换成秒（可带小数），也可换成几分钟几秒。本页不能导出。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="ogg-time-archives" class="list zone file-stack" data-blank="ogg-time-arch"></div>
+        <div id="ogg-time-archive-layer" class="archive-layer zone file-stack" data-blank="ogg-time-arch"></div>
+        <h2>待切片音频（占位）</h2>
+        <div id="ogg-time-pending" class="list zone" data-blank="ogg-time-pending"></div>
+        <div id="ogg-time-panel"></div>
+        <h2>切片结果（占位）</h2>
+        <div id="ogg-time-output" class="list zone" data-blank="ogg-time-output"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="ogg-chart-hub" data-drop hidden>
+        <h1>按谱面切总控（占位）</h1>
+        <p class="muted">点「按 combo 切分」或「在图片上选区」进入对应操作页。要离开谱面切，请点「我已经切完了，进入下一步」。（占位）</p>
+        <div class="row">
+          <button type="button" class="secondary" data-ogg-op="combo">按 combo 切分（占位）</button>
+          <button type="button" class="secondary" data-ogg-op="image">在图片上选区（占位）</button>
+        </div>
+        <h2>已经切好的文件（占位）</h2>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="ogg-hub-archives" class="list zone file-stack" data-blank="ogg-hub-arch"></div>
+        <div id="ogg-hub-archive-layer" class="archive-layer zone file-stack" data-blank="ogg-hub-arch"></div>
+        <div id="ogg-hub-files" class="list zone" data-blank="ogg-hub"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="ogg-chart-combo" data-drop hidden>
+        <h1>按 combo 切分（占位）</h1>
+        <p class="muted">左右分别放入 aff 和音频，点选连线；或上传文件夹/压缩包自动抽出任务。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 与音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 与音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <div id="combo-archives" class="list zone file-stack" data-blank="combo-arch"></div>
+        <div id="combo-archive-layer" class="archive-layer zone file-stack" data-blank="combo-arch"></div>
+        <div class="row pair-board" id="combo-pair-board">
+          <div class="pair-col">
+            <h2>aff 谱面（占位）</h2>
+            <div id="combo-aff" class="list zone" data-blank="combo-aff"></div>
+          </div>
+          <div class="pair-col">
+            <h2>ogg 音频（占位）</h2>
+            <div id="combo-ogg" class="list zone" data-blank="combo-ogg"></div>
+          </div>
+          <svg class="pair-lines" aria-hidden="true"></svg>
+        </div>
+        <p id="combo-notices" class="issues"></p>
+        <h2>任务列表（占位）</h2>
+        <div id="combo-tasks" class="list zone" data-blank="combo-tasks"></div>
+        <div id="combo-panel"></div>
+        <h2>当前切出的音频（占位）</h2>
+        <div id="combo-preview" class="list zone file-stack" data-blank="combo-prev"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="ogg-chart-image" data-drop hidden>
+        <h1>在图片上选区（占位）</h1>
+        <p class="muted">左右放入 aff 和音频并连线。选中一条任务后渲染谱面图，用旋转 90 度的中括号标出起止。（占位）</p>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 aff 与音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 aff 与音频文件（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <div id="img-archives" class="list zone file-stack" data-blank="img-arch"></div>
+        <div id="img-archive-layer" class="archive-layer zone file-stack" data-blank="img-arch"></div>
+        <div class="row pair-board" id="img-pair-board">
+          <div class="pair-col">
+            <h2>aff 谱面（占位）</h2>
+            <div id="img-aff" class="list zone" data-blank="img-aff"></div>
+          </div>
+          <div class="pair-col">
+            <h2>ogg 音频（占位）</h2>
+            <div id="img-ogg" class="list zone" data-blank="img-ogg"></div>
+          </div>
+          <svg class="pair-lines" aria-hidden="true"></svg>
+        </div>
+        <p id="img-notices" class="issues"></p>
+        <h2>任务列表（占位）</h2>
+        <div id="img-tasks" class="list zone" data-blank="img-tasks"></div>
+        <div class="row">
+          <button type="button" class="secondary" data-act="img-render">渲染谱面图（占位）</button>
+        </div>
+        <p class="muted">框线颜色：在色盘上点，外环是色相，中间是深浅。和绘画软件一样，所有颜色都能选。（占位）</p>
+        <div id="img-wheel" class="color-wheel"></div>
+        <label class="muted">起点偏移（毫秒）（占位） <input type="text" id="img-offset" /></label>
+        <div class="chart-view">
+          <div class="chart-zoom-bar">
+            <button type="button" class="secondary" data-chart-zoom="ogg" data-zoom-act="out">缩小（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="ogg" data-zoom-act="in">放大（占位）</button>
+            <button type="button" class="secondary" data-chart-zoom="ogg" data-zoom-act="reset">1×（占位）</button>
+            <span class="muted" data-zoom-readout="ogg"></span>
+          </div>
+          <div id="img-chart" class="chart-board"></div>
+        </div>
+        <div id="img-frags" class="row"></div>
+        <div class="row">
+          <button type="button" data-act="img-complete">完成切片（占位）</button>
+        </div>
+        <h2>当前切出的音频（占位）</h2>
+        <p id="img-restore-hint" class="muted"></p>
+        <div class="row">
+          <button type="button" class="secondary" data-act="img-restore-slices">从参数恢复切片（占位）</button>
+        </div>
+        <div id="img-preview" class="list zone file-stack" data-blank="img-prev"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="ogg-speed-format" data-drop hidden>
+        <h1>ogg 倍速与格式转换（占位）</h1>
+        <p id="ogg-speed-hint" class="muted"></p>
+        <div id="ogg-speed-tray" class="zone" hidden></div>
+        <h2>待处理音频（占位）</h2>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取音频文件（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取音频文件（占位）">
+            <input type="checkbox" id="ogg-extract" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="ogg-speed-archives" class="list zone file-stack" data-blank="ogg-speed-arch"></div>
+        <div id="ogg-speed-archive-layer" class="archive-layer zone file-stack" data-blank="ogg-speed-arch"></div>
+        <div id="ogg-speed-pending" class="list zone" data-blank="ogg-pending"></div>
+        <p id="ogg-speed-notices" class="issues"></p>
+        <label class="muted">倍速（占位） <input type="text" id="ogg-speed-value" /></label>
+        <p class="muted">导出格式（占位）</p>
+        <div id="ogg-formats" class="row"></div>
+        <div class="row">
+          <button type="button" data-act="ogg-speed-process">处理选中文件（占位）</button>
+          <button type="button" class="secondary" data-act="ogg-speed-export">导出选中文件（占位）</button>
+        </div>
+        <h2>处理后的文件（占位）</h2>
+        <div id="ogg-speed-processed" class="list zone" data-blank="ogg-processed"></div>
+        <h2>带进下一步（占位）</h2>
+        <div id="ogg-speed-carry" class="list zone" data-blank="ogg-carry"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="song-folder" data-drop hidden>
+        <h1>曲目文件夹（占位）</h1>
+        <div class="row upload-bar">
+          <button type="button" class="secondary" data-upload="files">加入文件（占位）</button>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取曲目相关文件（aff / 音频 / 封面图 / songlist）（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取曲目相关文件（aff / 音频 / 封面图 / songlist）（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。点开可一层一层往里看。（占位）</p>
+        <div id="folder-archives" class="list zone file-stack" data-blank="folder-arch"></div>
+        <div id="folder-archive-layer" class="archive-layer zone file-stack" data-blank="folder-arch"></div>
+        <p class="muted">对照游戏包：assets/songs/曲名/ 里可以有 0.aff～4.aff、0.ogg～4.ogg、base.ogg、1080_base.jpg、1080_base_256.jpg。下载曲才是 dl_曲名，这里不生成那种。（占位）</p>
+        <h2>官方文件名（占位）</h2>
+        <div id="folder-chips" class="row"></div>
+        <h2>文件池（占位）</h2>
+        <div id="folder-pool" class="list zone" data-blank="folder-pool"></div>
+        <h2>曲目文件夹（占位）</h2>
+        <div class="row">
+          <button type="button" class="secondary" id="folder-add">新建空文件夹（占位）</button>
+          <button type="button" class="secondary" id="folder-copy">复制文件夹格式（空壳）（占位）</button>
+        </div>
+        <div class="song-folder-main-stack">
+          <div class="song-folder-columns">
+            <div class="song-folder-zone song-folder-zone-working" data-song-folder-zone="working" data-song-folder-zone-drop="working">
+              <h3 id="folder-working-title">进行中（占位）</h3>
+              <p class="muted" id="folder-working-hint"></p>
+              <div id="folder-list-working" class="list song-folder-list"></div>
+              <div class="song-folder-working-drop-pad" id="folder-working-drop-pad">
+                <p class="muted" id="folder-working-drop-hint"></p>
+              </div>
+            </div>
+            <div class="song-folder-zone song-folder-zone-done" data-song-folder-zone="done">
+              <h3 id="folder-done-title">已完成（占位）</h3>
+              <p class="muted" id="folder-done-hint"></p>
+              <div class="row">
+                <button type="button" class="secondary" id="folder-wav-to-ogg" disabled>将全部 WAV 转为 OGG（占位）</button>
+              </div>
+              <p class="muted" id="folder-wav-hint"></p>
+              <div id="folder-list-done" class="list song-folder-list song-folder-list-done" data-song-folder-zone-drop="done"></div>
+            </div>
+          </div>
+          <div class="song-folder-tray-panel">
+            <div class="row song-folder-tray-head">
+              <h2 id="folder-tray-title">六芒星任务剪贴区（占位）</h2>
+              <button type="button" class="secondary" id="folder-tray-import">一键铺入六芒星任务（占位）</button>
+            </div>
+            <p class="muted" id="folder-tray-hint"></p>
+            <div id="folder-task-tray" class="list zone song-folder-tray" data-blank="folder-tray"></div>
+          </div>
+        </div>
+        <div class="song-folder-apk-import-panel" id="folder-apk-import-panel" hidden>
+          <h2 id="folder-apk-import-title"></h2>
+          <p class="muted" id="folder-apk-import-hint"></p>
+          <p class="muted" id="folder-apk-import-base"></p>
+          <div class="archive-find" data-arch-find-bar="apk-base-songs">
+            <label class="muted">
+              <span id="folder-apk-import-find-label"></span>
+              <input type="search" class="archive-find-input" data-arch-find-input="apk-base-songs" autocomplete="off" />
+            </label>
+            <button type="button" class="secondary" data-arch-find-next="apk-base-songs">下一个（占位）</button>
+            <span class="muted archive-find-status" data-arch-find-status="apk-base-songs"></span>
+          </div>
+          <p class="muted" id="folder-apk-import-open-hint"></p>
+          <div id="folder-apk-browse-layer" class="archive-layer zone file-stack song-folder-apk-browse-layer">
+            <div class="song-folder-apk-scroll">
+              <div id="folder-apk-browse-list" class="archive-layer-list" data-arch-list="apk-base-songs"></div>
+            </div>
+          </div>
+          <div id="folder-apk-files-layer" class="archive-layer zone file-stack song-folder-apk-files-layer" hidden>
+            <div class="archive-layer-bar">
+              <button type="button" class="secondary archive-layer-back" id="folder-apk-files-back" data-apk-back="1">返回（占位）</button>
+              <p class="muted archive-layer-crumb" id="folder-apk-files-crumb"></p>
+            </div>
+            <div class="archive-find" data-arch-find-bar="apk-base-files">
+              <label class="muted">
+                <span id="folder-apk-files-find-label"></span>
+                <input type="search" class="archive-find-input" data-arch-find-input="apk-base-files" autocomplete="off" />
+              </label>
+              <button type="button" class="secondary" data-arch-find-next="apk-base-files">下一个（占位）</button>
+              <span class="muted archive-find-status" data-arch-find-status="apk-base-files"></span>
+            </div>
+            <p class="muted" id="folder-apk-files-hint"></p>
+            <div class="song-folder-apk-scroll">
+              <div id="folder-apk-browse-files" class="archive-layer-list" data-arch-list="apk-base-files"></div>
+            </div>
+            <div class="row song-folder-apk-import-row">
+              <button type="button" id="folder-apk-import-btn">导入到左侧进行中（占位）</button>
+            </div>
+          </div>
+          <div class="song-folder-apk-repair-row" id="folder-apk-repair-row">
+            <button type="button" class="secondary chart-bulk-restore-repair-btn" id="folder-apk-repair-btn"></button>
+            <p class="muted song-folder-apk-repair-hint" id="folder-apk-repair-hint"></p>
+            <p class="muted fail-pop-repair-status" id="folder-apk-repair-status" hidden></p>
+          </div>
+          <input type="file" id="folder-apk-repair-input" accept=".apk" hidden />
+        </div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="songlist" data-drop hidden>
+        <h1>songlist（占位）</h1>
+        <p class="muted">基底 songlist 全文展示，可点击改字。选中锁形挂件里的曲目文件夹后弹出四分类操作面板编写新段并接到末尾。id 只允许英文字母。（占位）</p>
+        <p class="muted">difficulties 以下暂缓；本页先测 difficulty 以上字段。（占位）</p>
+        <button type="button" class="secondary" id="songlist-upload-btn">上传原本的 songlist（占位）</button>
+        <input id="songlist-upload" type="file" hidden />
+        <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+        <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取 songlist（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取 songlist（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。（占位）</p>
+        <div id="songlist-archives" class="list zone file-stack" data-blank="songlist-arch"></div>
+        <div id="songlist-archive-layer" class="archive-layer zone file-stack" data-blank="songlist-arch"></div>
+        <p id="songlist-page-status" class="songlist-page-status muted" role="status" hidden></p>
+        <p id="songlist-base-meta" class="muted"></p>
+        <div class="songlist-base-find" data-sl-base-find-bar role="search">
+          <span class="songlist-base-find-label" id="songlist-base-find-label">检索</span>
+          <input type="search" id="songlist-base-find-input" class="songlist-base-find-input" autocomplete="off" />
+          <button type="button" id="songlist-base-find-next" class="secondary songlist-base-find-next">下一个</button>
+          <span id="songlist-base-find-status" class="songlist-base-find-status" aria-live="polite">0 / 0</span>
+        </div>
+        <label class="songlist-base-label muted">基底 songlist（占位）
+          <div class="songlist-base-wrap">
+            <pre id="songlist-base-highlight" class="songlist-base-highlight" aria-hidden="true"></pre>
+            <textarea id="songlist-base-text" class="songlist-base-text" rows="14" spellcheck="false" placeholder="进入本页时将从基底 APK 自动提取；也可手动上传…"></textarea>
+          </div>
+        </label>
+        <div id="songlist-legacy-drafts" hidden>
+          <div id="songlist-drafts" class="list zone"></div>
+          <div id="songlist-editor"></div>
+        </div>
+        <dialog id="songlist-writing-dialog" class="songlist-writing-dialog">
+          <form autocomplete="off" class="songlist-writing-form" onsubmit="return false">
+          <header class="songlist-writing-header">
+            <h2 class="songlist-writing-title"></h2>
+            <button type="button" class="secondary" data-sl-act="close-panel">关闭（占位）</button>
+          </header>
+          <div class="songlist-writing-split">
+            <div class="songlist-writing-main">
+              <div class="songlist-writing-body">
+                <div id="songlist-writing-page-fields">
+                  <div id="songlist-idx-conflict"></div>
+                  <div id="songlist-lookup-panel" class="songlist-lookup-panel"></div>
+                  <div id="songlist-mode-sections" class="songlist-mode-sections"></div>
+                  <pre id="songlist-segment-preview" class="songlist-segment-preview muted"></pre>
+                </div>
+                <div id="songlist-writing-page-difficulties" hidden>
+                  <p class="muted songlist-difficulties-hint">difficulties 编写（占位）</p>
+                  <div id="songlist-difficulties-editor"></div>
+                </div>
+              </div>
+            </div>
+            <aside id="songlist-replace-ref-panel" class="songlist-replace-ref-panel" hidden>
+              <h3 class="songlist-replace-ref-title"></h3>
+              <pre id="songlist-replace-ref-text" class="songlist-replace-ref-text muted"></pre>
+            </aside>
+          </div>
+          <footer id="songlist-writing-footer" class="songlist-writing-footer row"></footer>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="pack" data-drop hidden>
+        <h1>最终打包（占位）</h1>
+        <p class="muted">收获区：前面步骤写入产物清单的东西都会出现在这里。空选直达本页时这里一开始是空的，请自己上传。（占位）</p>
+        <p class="muted">文件夹名就是压缩包里的目录名。根上的文件在压缩包最外层。（占位）</p>
+        <p class="muted">逐个下载会按组包路径一个个存；压缩包则打成一个 zip。请先选一种再点完成。（占位）</p>
+        <h2>收获与上传的文件（占位）</h2>
+        <div id="pack-items" class="list zone" data-blank="pack-items"></div>
+        <div class="row">
+          <button type="button" class="secondary" id="pack-upload-btn">上传额外文件（占位）</button>
+          <input id="pack-upload" type="file" multiple hidden />
+          <div class="extract-only-control">
+          <button type="button" class="secondary extract-only-handle" data-extract-only-handle="1">仅自动提取曲目相关文件（aff / 音频 / 封面图 / songlist）（占位）</button>
+          <label class="extract-only-check muted" title="仅自动提取曲目相关文件（aff / 音频 / 封面图 / songlist）（占位）">
+            <input type="checkbox" data-extract-only />
+            <span class="extract-only-check-box" aria-hidden="true"></span>
+          </label>
+        </div>
+          <button type="button" class="secondary" data-upload="archive">加入压缩包（占位）</button>
+          <button type="button" id="pack-add-folder">新建文件夹（占位）</button>
+          <button type="button" class="secondary" data-pack-root>放到根上（占位）</button>
+        </div>
+        <h2>压缩包（占位）</h2>
+        <p class="muted">把 zip 或 apk 放到这里，或点「加入压缩包」。（占位）</p>
+        <div id="pack-archives" class="list zone file-stack" data-blank="pack-arch"></div>
+        <div id="pack-archive-layer" class="archive-layer zone file-stack" data-blank="pack-arch"></div>
+        <h2>放在根上（压缩包最外层）（占位）</h2>
+        <div id="pack-root" class="list"></div>
+        <h2>文件夹（占位）</h2>
+        <div id="pack-folders" class="list"></div>
+        <div class="row">
+          <button type="button" data-export="files" data-selected="false">逐个下载（占位）</button>
+          <button type="button" data-export="zip" data-selected="true">打成一个压缩包（占位）</button>
+        </div>
+        <p id="pack-issues" class="issues"></p>
+      </section>
+
+      <section class="page-step screen" data-step="module" hidden>
+        <h1 id="module-title">这一页（占位）</h1>
+        <div id="module-extra"></div>
+        <div id="module-options" class="row"></div>
+        <div id="module-list" class="list"></div>
+      </section>
+
+      <section class="page-step screen drop-zone" data-step="apk" data-drop hidden>
+        <div id="apk-base-panel">
+          <h1 id="apk-title">放入待改写的基底 APK（占位）</h1>
+          <p id="apk-body" class="muted">请上传你要改写的整包 APK。（占位）</p>
+          <p id="apk-base-pending" class="muted"></p>
+          <div class="row upload-bar">
+            <button type="button" class="secondary" data-upload="apk">上传基底 APK（占位）</button>
+            <button type="button" class="secondary" data-act="clear-apk-base">清空（占位）</button>
+          </div>
+        </div>
+        <div id="apk-hub-panel" hidden>
+          <h1 id="apk-hub-title">APK 操作总控（占位）</h1>
+          <p id="apk-hub-body" class="muted"></p>
+          <h2>已完成的任务（占位）</h2>
+          <div id="apk-hub-done" class="list zone" data-blank="apk-hub-done"></div>
+          <div class="row">
+            <button type="button" class="secondary" data-act="apk-enter-image">进入配套识图切分（占位）</button>
+          </div>
+        </div>
+        <div id="apk-integrate-panel" hidden>
+          <header class="apk-integrate-head">
+            <h1 id="apk-integrate-title">APK 整合与导出（占位）</h1>
+            <p id="apk-integrate-body" class="muted"></p>
+            <p id="apk-integrate-base" class="muted"></p>
+            <p id="apk-integrate-staged" class="muted"></p>
+            <div class="row apk-integrate-catalog-row">
+              <label class="apk-integrate-catalog-label">
+                <span id="apk-integrate-catalog-url-label"></span>
+                <input type="url" id="apk-integrate-catalog-url" class="apk-integrate-catalog-url" autocomplete="off" />
+              </label>
+              <button type="button" class="secondary" id="apk-integrate-catalog-load"></button>
+              <button type="button" class="secondary" id="apk-integrate-catalog-pick"></button>
+              <a class="secondary apk-integrate-catalog-open" id="apk-integrate-catalog-open" target="_blank" rel="noopener noreferrer"></a>
+              <input type="file" id="apk-integrate-catalog-file" accept=".zip,application/zip" hidden />
+            </div>
+            <p id="apk-integrate-catalog-status" class="muted" role="status"></p>
+          </header>
+          <p id="apk-integrate-action-status" class="apk-integrate-action-status is-hint" role="status"></p>
+          <p id="apk-integrate-tile-hint" class="muted apk-integrate-tile-hint"></p>
+          <div id="apk-integrate-tiles" class="apk-integrate-tiles"></div>
+          <button type="button" data-act="apk-export" id="apk-integrate-export"></button>
+        </div>
+        <p class="badge" id="apk-placeholder-badge" hidden>占位页（占位）</p>
+      </section>
+
+      <aside id="songlist-base-suggest" class="songlist-base-suggest" hidden aria-label="工具箱（占位）">
+        <p class="songlist-base-suggest-title" id="songlist-base-suggest-title">工具箱（占位）</p>
+        <ul class="songlist-base-suggest-list">
+          <li class="songlist-base-suggest-row">
+            <button type="button" class="songlist-base-suggest-fill" data-sl-base-suggest="jacketOverride">
+              <code>"jacketOverride": true</code>
+            </button>
+            <span class="songlist-base-suggest-desc" id="songlist-base-suggest-jacket-desc"></span>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="nav-dock" id="nav-dock">
+        <section class="nav-edit" id="nav-edit">
+          <button type="button" class="secondary" id="undo-edit" disabled>撤回上一步（占位）</button>
+          <button type="button" class="secondary" id="redo-edit" disabled>重做上一步（占位）</button>
+          <button type="button" class="secondary" id="lock-viewport" aria-pressed="false">锁定画面（占位）</button>
+        </section>
+        <section class="nav" id="nav" hidden>
+          <button type="button" class="secondary" id="back">返回上一步（占位）</button>
+          <button type="button" class="secondary" id="reset">重置（占位）</button>
+          <button type="button" id="next">下一步（占位）</button>
+        </section>
+      </div>
+      <div id="chart-overlap" class="chart-overlap" hidden>
+        <div class="chart-overlap-card" role="dialog" aria-modal="true" aria-labelledby="chart-overlap-title">
+          <p id="chart-overlap-title"></p>
+          <div class="row">
+            <button type="button" data-act="chart-overlap-go" id="chart-overlap-go"></button>
+            <button type="button" class="secondary" data-act="chart-overlap-cancel" id="chart-overlap-cancel"></button>
+          </div>
+        </div>
+      </div>
+      <div id="chart-restore-already" class="chart-overlap" hidden>
+        <div class="chart-overlap-card" role="dialog" aria-modal="true" aria-labelledby="chart-restore-already-title">
+          <p id="chart-restore-already-title"></p>
+          <div class="row">
+            <button type="button" data-act="chart-restore-already-ok" id="chart-restore-already-ok"></button>
+          </div>
+        </div>
+      </div>
+      <div id="chart-bulk-restore" class="chart-overlap" hidden>
+        <div class="chart-overlap-card chart-bulk-restore-card" role="dialog" aria-modal="true" aria-labelledby="chart-bulk-restore-title">
+          <h2 id="chart-bulk-restore-title"></h2>
+          <p id="chart-bulk-restore-summary" class="muted"></p>
+          <ul id="chart-bulk-restore-details" class="chart-bulk-restore-details" hidden></ul>
+          <p id="chart-bulk-restore-repair-hint" class="muted chart-bulk-restore-repair-hint" hidden></p>
+          <p id="chart-bulk-restore-repair-status" class="chart-bulk-restore-repair-status" hidden></p>
+          <div class="row chart-bulk-restore-actions">
+            <button type="button" class="secondary chart-bulk-restore-repair-btn" data-act="chart-bulk-restore-repair-pack" id="chart-bulk-restore-repair-btn" hidden></button>
+            <button type="button" class="secondary" data-act="chart-bulk-restore-details" id="chart-bulk-restore-details-btn"></button>
+            <button type="button" data-act="chart-bulk-restore-ok" id="chart-bulk-restore-ok"></button>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="chart-bulk-restore-pack-input" accept=".zip,.apk,.jar,.aar,.xapk" hidden />
+      <div id="pair-speed-process-report" class="chart-overlap" hidden>
+        <div class="chart-overlap-card chart-bulk-restore-card" role="dialog" aria-modal="true" aria-labelledby="pair-speed-process-report-title">
+          <h2 id="pair-speed-process-report-title"></h2>
+          <p id="pair-speed-process-report-summary" class="muted"></p>
+          <ul id="pair-speed-process-report-details" class="chart-bulk-restore-details" hidden></ul>
+          <p id="pair-speed-process-repair-hint" class="muted chart-bulk-restore-repair-hint" hidden></p>
+          <p id="pair-speed-process-repair-status" class="chart-bulk-restore-repair-status" hidden></p>
+          <div class="row chart-bulk-restore-actions">
+            <button type="button" class="secondary chart-bulk-restore-repair-btn" data-act="pair-speed-process-repair-pack" id="pair-speed-process-repair-btn" hidden></button>
+            <button type="button" class="secondary" data-act="pair-speed-process-details" id="pair-speed-process-details-btn"></button>
+            <button type="button" data-act="pair-speed-process-ok" id="pair-speed-process-ok"></button>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="pair-speed-process-pack-input" accept=".zip,.apk,.jar,.aar,.xapk" hidden />
+    </div>
+
+    <aside id="follower" class="follower" hidden></aside>
+    <input id="file-pick" type="file" multiple hidden />
+    <input type="file" id="checkpoint-import-pick" accept=".json,application/json" hidden />
+
+    <aside id="probe" class="probe">
+      <div class="probe-fan" id="probe-panel">
+        <button type="button" class="probe-petal" data-kind="act" id="probe-fill" title="一键填充当前页参数（占位）">填参</button>
+        <button type="button" class="probe-petal" data-kind="act" id="probe-save-checkpoint" title="把当前会话存到本地并下载 JSON（占位）">存点</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="aff" title="假谱面 demo.aff（占位）">aff</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="ogg" title="假音频 demo.ogg（占位）">ogg</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="wav" title="假音频 demo.wav（占位）">wav</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="songlist" title="假原本 songlist（占位）">表</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="zip" title="假压缩包 lostrequiem.zip（占位）">zip</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="apk" title="Infinity 整包 APK（占位）">apk</button>
+        <button type="button" class="probe-petal" draggable="true" data-probe="base-apk" title="A 路基底 ArcSlow_7_mod（占位）">基底</button>
+        <button type="button" class="probe-petal" data-kind="act" id="probe-import-checkpoint" title="从 checkpoint JSON 读档恢复会话（占位）">读点</button>
+        <button type="button" class="probe-petal" data-kind="act" id="probe-batch-all" title="一次上传 Infinity APK 与全部切片 zip（占位）">全传</button>
+        <div class="probe-slice-list" id="probe-slice-list" aria-label="切片 zip（占位）"></div>
+      </div>
+      <button type="button" class="probe-ball" id="probe-toggle" aria-expanded="false" aria-controls="probe-panel" title="拖动小球换位置，点一下圆形展开（占位）">测</button>
+    </aside>
+
+    <div id="fail-pop" class="fail-pop" hidden role="alertdialog" aria-modal="true" aria-labelledby="fail-pop-title">
+      <div class="fail-pop-card">
+        <h2 id="fail-pop-title">操作失败（占位）</h2>
+        <pre id="fail-pop-body"></pre>
+        <ul id="fail-pop-missing-list" class="fail-pop-missing-list" hidden></ul>
+        <p id="fail-pop-repair-hint" class="muted chart-bulk-restore-repair-hint" hidden></p>
+        <p id="fail-pop-repair-status" class="muted fail-pop-repair-status" hidden></p>
+        <div class="row fail-pop-actions">
+          <button type="button" class="secondary chart-bulk-restore-repair-btn" data-act="fail-pop-repair-pack" id="fail-pop-repair-pack" hidden></button>
+          <button type="button" id="fail-pop-close">关闭（占位）</button>
+        </div>
+        <input type="file" id="song-folder-tray-pack-input" accept=".zip,.apk,.jar,.aar,.xapk" hidden />
+      </div>
+    </div>
+
+    <div id="ingest-busy" class="ingest-busy" hidden aria-busy="false" role="status" aria-live="polite">
+      <div class="ingest-busy-card">
+        <p id="ingest-busy-title">正在加载压缩包（占位）</p>
+        <p id="ingest-busy-detail" class="muted">大包（尤其是几 GB 的 apk）要先写入本地再读目录，请稍等（占位）</p>
+        <p id="ingest-busy-elapsed" class="muted"></p>
+        <p id="ingest-busy-eta" class="muted">预计剩余：计算中…（占位）</p>
+        <div class="ingest-busy-actions">
+          <button type="button" class="secondary" id="ingest-busy-minimize">缩小到后台（占位）</button>
+          <button type="button" class="secondary" id="ingest-busy-cancel">取消上传（占位）</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
